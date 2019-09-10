@@ -1,0 +1,2 @@
+pip install --user beautifulsoup4
+pip install --user requests

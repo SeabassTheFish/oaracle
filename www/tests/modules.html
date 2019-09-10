@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+  <body>
+    <div ng-app="MyApp" ng-controller="MyController">
+    <p>I'm not important, but at least I work!</p>
+    <p ng-bind="binding"></p>
+    </div>
+    <script>
+      var app = angular.module("MyApp", []);
+      app.controller("MyController", function($scope) {
+        $scope.binding = "I was made using ng-bind";    
+      });
+    </script>
+  </body>
+</html>

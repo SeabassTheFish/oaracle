@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  ul.profile {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.profile li {
+    display: inline;
+    float: left;
+  }
+  ul.profile li button {
+    border: none;
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  ul.profile li button:hover {
+    background-color: #aaaaaa;
+  }
+  </style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<div class="profile">
+  <ul class="profile">
+    <li><button class="profile" onclick="openTab(event, 'info')">Club Info</button></li>
+    <li><button class="profile" onclick="openTab(event, 'stats')">Stats</button></li>
+    <li><button class="profile" onclick="openTab(event, 'stats')">Roster</button></li>
+  </ul>
+</div>
+</body>
+</html>

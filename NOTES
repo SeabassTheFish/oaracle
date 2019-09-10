@@ -1,0 +1,26 @@
+1. List of regattas: https://api.herenow.com/breeze/BreezeApi/Races
+
+2. Each regatta:
+https://api.herenow.com/breeze/BreezeApi/GetScopedRaceFlights?raceId={RACE_ID}&scopeStartTime={DATE}T{TIME}Z&scopeEndTime={DATE}T{TIME}Z
+
+For instance, for the Hooch:
+https://api.herenow.com/breeze/BreezeApi/GetScopedRaceFlights?raceId=20559&scopeStartTime=2018-11-03T04:00:00.000Z&scopeEndTime=2018-11-04T23:59:59.999Z
+
+You can make an HTTP request using the curl program and write the result to
+a file like: curl -o OUTPUT-FILE URL
+
+Your program should fetch URL #1 and process it, generating a list of #2
+URLs with the appropriate race ID and dates substituted (those three bits of
+information are found in each object you get back from URL #1).
+
+To format a JSON file named FILE.json for easy reading...
+python -m tool.json < FILE.json
+
+Each python script should start with
+#!/usr/local/bin/python3
+
+And to make the file executable, do this:
+chmod +x FILE.py
+
+To connect to your database (on servant):
+    psql theoaracle

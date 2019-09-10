@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="listTeams" ng-controller="listCtrl">
+    <ul>
+      <li ng-repeat="team in teams track by $index"><a href="./{{team}}">{{team}}</a></li>
+      <li>{{typeTeams}}</li>
+    </ul>
+  </div>
+  <script>
+    var app = angular.module("listTeams", []);
+    app.controller("listCtrl", function($scope, $http) {
+      $http.get("../cgi-bin/listBoats.py").then(function(response) {
+        $scope.teams = Object.values(response.data.teams);
+        $scope.typeTeams = typeof $scope.teams;
+      }, function(response) {
+        console.log(response);
+      });
+    });
+  </script>
+</body>
+</html>
